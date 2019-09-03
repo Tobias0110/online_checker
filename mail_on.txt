@@ -1,0 +1,5 @@
+To: example@gmail.com
+From: example@gmx.at
+Subject: Server online
+
+Die PMR-Wetterstation ist online.
