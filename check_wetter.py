@@ -6,9 +6,14 @@ import time
 online = 1
 
 while 1:
-	response = os.system("ping -c 1 192.168.1.101")
+	sum = 0
+	for x in range(3):
+		response = os.system("ping -c 1 192.168.1.101") #returns 256 when ping failed
+		sum = sum + response
+		time.sleep(10)
+		#print("summe: " + str(sum))
 
-	if response == 0:
+	if sum < 768:
 		if online == 0:
 			print("Wetterstation online")
 			online = 1
@@ -22,4 +27,3 @@ while 1:
 			os.system("ssmtp example@gmail.com < mail_off.txt")
 		else:
 			print("Noch immer offline")
-	time.sleep(10)
